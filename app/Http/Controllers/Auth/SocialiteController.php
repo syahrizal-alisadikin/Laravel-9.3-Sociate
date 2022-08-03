@@ -19,7 +19,7 @@ class SocialiteController extends Controller
     {
         try {
 
-            $user = Socialite::driver($provider)->user();
+            $user = Socialite::driver($provider)->stateless()->user();
         } catch (Exception $e) {
             return redirect()->back();
         }
